@@ -27,7 +27,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - name: Generate new index.html
-      run: python ./bin/generate_index.py
+      run: python bin/generate_index.py
       
     - name: Add & Commit new index.html
       uses: EndBug/add-and-commit@v4.2.1
