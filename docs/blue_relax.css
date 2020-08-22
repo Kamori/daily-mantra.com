@@ -1,0 +1,111 @@
+/* Desktop - 1 */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(217.76deg, #43c6ac -5.35%, #191654 91.55%);
+  overflow: hidden;
+  font-family: Josefin Sans;
+}
+
+.circle {
+  border-radius: 50%;
+  position: absolute;
+
+  width: 235px;
+  height: 235px;
+}
+
+.circle1 {
+  left: 131px;
+  top: 109px;
+  background: rgba(73, 130, 175, 0.37);
+}
+
+.circle2 {
+  left: 23px;
+  top: 226px;
+
+  background: rgba(73, 130, 175, 0.07);
+}
+
+.circle3 {
+  left: 521px;
+  top: 615px;
+
+  background: rgba(73, 130, 175, 0.04);
+}
+
+.circle4 {
+  left: 1009.26px;
+  top: 463.47px;
+
+  background: rgba(73, 130, 175, 0.04);
+  transform: rotate(-80.68deg);
+}
+
+.circle5 {
+  left: 679px;
+  top: 512px;
+
+  background: rgba(73, 130, 175, 0.11);
+}
+
+.circle6 {
+  left: 933.21px;
+  top: 290.88px;
+
+  background: rgba(73, 130, 175, 0.11);
+  transform: rotate(-80.68deg);
+}
+
+.circle7 {
+  left: 679px;
+  top: 723px;
+
+  background: rgba(73, 130, 175, 0.21);
+}
+
+.circle8 {
+  left: 1141.42px;
+  top: 325.05px;
+
+  background: rgba(73, 130, 175, 0.21);
+  transform: rotate(-80.68deg);
+}
+
+.mantra {
+  position: absolute;
+  width: 1158px;
+  height: 185px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 6em;
+  line-height: 1em;
+
+  color: #ffffff;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
+}
+
+.socials {
+  color: #f5b2b287;
+  position: absolute;
+  bottom: 2vh;
+  margin-left: 2em;
+  font-size: 1.4em;
+  text-decoration: none;
+}
+
+.socials:hover {
+  color: #f5b2b2;
+}
