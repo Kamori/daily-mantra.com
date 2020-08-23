@@ -30,11 +30,14 @@ jobs:
 
     - name: Generate new index.html
       run: python bin/generate_index.py
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       
     - name: Add & Commit new index.html
       uses: EndBug/add-and-commit@v4.2.1
       with:
-          message: "Setting mantra for TODAY"
+          message: "Setting mantra for ${{ steps.date.outputs.date }}"
           add: "./docs/index.html"
           author_name: "Github Daily Action"
           author_email: "kamori.goat@gmail.com"
