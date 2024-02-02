@@ -1,36 +1,63 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daily Mantra</title>
-    <link rel="stylesheet" href="blue_relax.css" />
-    <link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="//fonts.googleapis.com/css?family=Josefin+Sans"
-    />
-  </head>
-  <body>
-    <div class="circle circle1"></div>
-    <div class="circle circle2"></div>
-    <div class="circle circle3"></div>
-    <div class="circle circle4"></div>
-    <div class="circle circle5"></div>
-    <div class="circle circle6"></div>
-    <div class="circle circle7"></div>
-    <div class="circle circle8"></div>
-    <div class="mantra">
-      I surround myself by those who make me better.
-    </div>
-        <a
-      href="https://github.com/kamori/daily-mantra.com"
-      class="socials"
-      target="_blank"
-      ><i class="fi-social-github"></i> GitHub Project</a
-    >
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Mantra</title>
+  <link rel="stylesheet" href="blue_relax.css" />
+  <link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
+  <link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="//fonts.googleapis.com/css?family=Josefin+Sans" 
+  />
+</head>
+
+<body>
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
+  <div class="circle circle4"></div>
+  <div class="circle circle5"></div>
+  <div class="circle circle6"></div>
+  <div class="circle circle7"></div>
+  <div class="circle circle8"></div>
+  <div class="mantra">
+  </div>
+  <a 
+    href="https://github.com/kamori/daily-mantra.com" 
+    class="socials" 
+    target="_blank">
+    <i class="fi-social-github"></i>
+    GitHub Project
+  </a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.3.10/seedrandom.min.js"></script>
+  <script>
+    const loadMantras = async () => {
+      // Load the `mantras.json` file and its data
+      let mantras = await fetch("../assets/mantras.json");
+      mantras = await mantras.json();
+      return mantras["mantras"];
+    };
+
+    const chooseRandomMantra = (mantras) => {
+      // Seed the random number generator to today's date
+      // (produce a different random number for each different day)
+      let date = new Date().toJSON().slice(0, 10).replaceAll("-", "");
+      Math.seedrandom(date);
+      // Get today's mantra from list given
+      let mantraIndex = Math.floor(Math.random() * mantras.length);
+      return mantras[mantraIndex];
+    }
+
+    window.onload = async () => {
+      let mantras = await loadMantras();
+      let mantra = chooseRandomMantra(mantras);
+      // Update HTML to display mantra quote
+      document.querySelector(".mantra").innerText = mantra["quote"];
+    };
+  </script>
+</body>
+
 </html>
-            
